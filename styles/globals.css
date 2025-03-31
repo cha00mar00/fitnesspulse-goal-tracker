@@ -1,0 +1,68 @@
+/* === Global Reset & Box Sizing === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* === Base HTML & Body Styles === */
+html,
+body {
+  /* Ensure body can potentially fill viewport height */
+  /* MUI CssBaseline handles background, color, and basic resets */
+  min-height: 100vh;
+}
+
+body {
+  /* Remove default browser margin (redundant with MUI CssBaseline but common practice) */
+  margin: 0;
+  /* Apply font smoothing (redundant with MUI CssBaseline but reinforces intent) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Font family is applied via className in app/layout.tsx */
+  /* Rely on MUI theme/CssBaseline for base text color and background */
+}
+
+/* === Base Link Styles === */
+a {
+  /* Inherit text color from parent by default */
+  color: inherit;
+  /* Remove default underline; components like MUI Link manage their own */
+  text-decoration: none;
+}
+/* Optional: Minimal hover for non-MUI links if needed */
+/* a:not([class]):hover { text-decoration: underline; } */
+
+
+/* === Responsive Media === */
+img,
+picture,
+video,
+canvas,
+svg {
+  /* Ensure media elements scale correctly */
+  display: block;
+  max-width: 100%;
+}
+
+/* === Base Input/Button/Textarea Styles === */
+/* Ensure fonts are inherited in form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* === Text Overflow === */
+/* Helps prevent overflow issues with long words/strings in typography elements */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  /* Hyphens can also be considered, but `overflow-wrap` is often sufficient */
+  /* hyphens: auto; */
+}
+
+/* === Accessibility === */
+/* Rely on default browser/MUI focus outlines for accessibility. */
+/* Avoid removing outlines unless providing a clear, accessible alternative */
+/* for :focus-visible */
