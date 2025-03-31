@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+import React, { ReactNode } from 'react';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '../styles/globals.css'; // Import global styles
+
+// Configure the Inter font from Google Fonts
+const inter = Inter({ subsets: ['latin'] });
+
+/**
+ * Defines the global metadata for the FitTrackApp application.
+ * This includes the default title, a template for page titles, and a description for SEO.
+ * Includes the favicon reference.
+ */
+export const metadata: Metadata = {
+  title: {
+    template: '%s | FitTrackApp', // Template for page-specific titles
+    default: 'FitTrackApp - Track Your Fitness Goals', // Default title if no specific title is set
+  },
+  description:
+    'Monitor your fitness goals, track progress, and stay motivated with FitTrackApp.', // SEO description
+  // Add the icons property here
+  icons: {
+    icon: '/favicon.ico', // Specifies the path to the favicon in the public directory
+  },
+};
+
+/**
+ * RootLayout Component: The main layout wrapping the entire application.
+ * Sets up the basic HTML structure, applies global styles and fonts,
+ * and renders child components (pages or nested layouts).
+ *
+ * @param {object} props - Component props.
+ * @param {React.ReactNode} props.children - The child components to be rendered within the layout.
+ * @returns {JSX.Element} The root layout structure.
+ */
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
+  return (
+    <html lang="en">
+      {/* Apply the Inter font class name to the body for global font styling */}
+      <body className={inter.className}>
+        {/* Render the child components passed to the layout */}
+        {children}
+      </body>
+    </html>
+  );
+}
