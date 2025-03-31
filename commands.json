@@ -1,0 +1,9 @@
+{
+  "seed-db": "node scripts/seedDatabase.js",
+  "lint:fix": "npm run lint -- --fix",
+  "format:check": "npx prettier --check .",
+  "format:write": "npx prettier --write .",
+  "db:connect:local": "mongosh mongodb://localhost:27017/fittrack_mvp_dev",
+  "generate:secret": "openssl rand -base64 32",
+  "validate:env": "node scripts/validateEnv.js"
+}
